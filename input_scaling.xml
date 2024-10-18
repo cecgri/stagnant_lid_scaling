@@ -1,0 +1,45 @@
+<Stagnant_Lid_Scaling>
+  <!--
+      PHYSICAL PARAMETERS
+  -->
+  <Physics>
+    <param name='dimensionless' value="false" note="if true:
+						   input parameters hereunder are non-dimensional" />
+    <param name='rayleigh' value='1.0E7' note="used ONLY if dimensionless;
+					       Computed otherwise" />
+    <param name='alpha' value='1.6E-4' note="in K^-1. Not used if dimensionless" />
+    <param name='kappa' value='1.5E-4' note="in m^2/s. Not used if dimensionless" />
+    <param name='k' value='2.6' note="in W/(m.K). Not used if dimensionless" />
+    <param name='rho' value='917.0' note="in kg/m^3. Not used if dimensionless" />
+    <param name='g' value='1.33' note="in m/s^2. Not used if dimensionless" />
+    <param name='D' value='150.0E3' note="in meters. Not used if dimensionless" />
+    <param name='Ttop' value='100.0' note="in K. Not used if dimensionless" />
+    <param name='Tbot' value='250.0' note="in K. Not used if dimensionless" />
+    <param name='eta_ref' value='5.0E13' note="in Pa.s. Not used if dimensionless" />
+    <param name='T_ref' value='250.0' note="in K. Not used if dimensionless.
+					     WARNING: the viscosity at the bottom (for the Rayleigh) 
+					     is computed so that eta=eta_ref for T=T_ref.
+					     If eta_ref is the viscosity at the bottom,
+					     make sure that T_ref=Tbot" />
+    <param name='ToffAdim' value='0.0' note="used ONLY if dimensionless; computed otherwise" />
+    <param name='ToffDim' value='0.0' note="not used if dimensionless.
+					    WARNING: Should be 0.0 for real Arrhenius law." />
+    <param name='viscosity' value="Arrhenius" note="can be: Arrhenius or FK" />
+    <param name='Ea' value='30.0' note="can be dimensionless,
+					 or in kJ/mol if NOT dimensionless" />
+    <param name='theta' value='18.3082' note="only used if viscosity=FK,
+					   always taken as dimensionless" />
+  </Physics>
+  <!--
+      SCALING COEFFICIENTS and PARAMETERS for numerical methods
+  -->
+  <Scaling>
+    <param name="coeffTi" value='0.714' note="recommended value for 2-D cartesian: 0.714" />
+    <param name="coeffNu" value='0.485'  note="recommended value for 2-D cartesian: 0.485" />
+    <param name="precision" value="1.0E-5" note="defines the dimensionless precision for
+						 the temperature in the numerical solution" />
+    <param name="error" value="1.0E-6" note="accepted relative error in Newton's method" />
+    <param name="Tcmin" value="0.2" note="recommended value=0.2;
+					  can be higher for very high viscosity contrasts" />
+  </Scaling>
+</Stagnant_Lid_Scaling>
